@@ -11,6 +11,7 @@ import java.util.List;
 
 @Repository
 public class EmployeeDAOJpaImpl implements EmployeeDAO{
+    @Autowired
     private EntityManager entityManager;
     @Autowired
     public EmployeeDAOJpaImpl(EntityManager theEntityManager) {

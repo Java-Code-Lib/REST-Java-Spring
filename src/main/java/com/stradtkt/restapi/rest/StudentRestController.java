@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/students")
 public class StudentRestController {
     private List<Student> students;
 
@@ -23,12 +23,12 @@ public class StudentRestController {
         students.add(new Student("Lee", "Petterson"));
     }
 
-    @GetMapping("/students")
+    @GetMapping("/")
     public List<Student> getStudents() {
         return students;
     }
 
-    @GetMapping("/students/{studentId}")
+    @GetMapping("/{studentId}")
     public Student getStudent(@PathVariable int studentId) {
         if((studentId >= students.size()) || (studentId < 0)) {
             throw new StudentNotFoundException("Student id was not in the system please try again!");
